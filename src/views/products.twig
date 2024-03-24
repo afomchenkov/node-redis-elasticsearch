@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <a href="/product/new" class="float-right">New Product</a>
+  <h1>{{title}} <sup><small>(Total : {{totalCount}} | Cache: {% if cache %}true{% else %}false{% endif %})</small></sup></h1>
+  <div>
+    <ul>
+      {% for product in products %}
+        <li>
+          <a href="/product/id/{{product['id']}}">{{product['name']}}</a>
+          <small>(<a href="/product/{{product['id']}}/edit">Edit</a> | <a href="/product/{{product['id']}}/delete">Delete</a>)</small>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <div class="float-right">
+    <small>(Quantity : {{product['quantity']}} | Price : {{product['price']}}) - 
+      [<a href="/product/{{product['id']}}/edit">Edit</a> | <a href="/product/{{product['id']}}/delete">Delete</a>]
+    </small>
+  </div>
+  <h1>{{title}}</h1>
+  <div>
+      {{product['description']}}
+  </div>
+{% endblock %}
